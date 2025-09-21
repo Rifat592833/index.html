@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Complete HTML-only Demo</title>
+  <meta name="description" content="A single-file HTML5 demo containing navbar, main, footer, table, form, audio, video, canvas, SVG and other semantic elements — no CSS or JavaScript.">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header role="banner">
+    <div>
+      <a href="#home" aria-label="Homepage" >
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><rect rx='8' width='48' height='48' fill='%230b6cff'/><text x='50%' y='54%' font-size='22' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>W</text></svg>" alt="Site logo">
+      </a>
+      <h1>HTML-only Demo Site</h1>
+      <p>A demonstration of many HTML5 elements .</p>
+    </div>
+
+    <nav aria-label="Main navigation style="color: red;">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <aside aria-label="Quick actions">
+      <p><a href="#signup">Sign up</a> | <a href="#privacy">Privacy</a></p>
+    </aside>
+  </header>
+
+  <!-- Main content -->
+  <main id="home" role="main">
+    <article aria-labelledby="welcome">
+      <h2 id="welcome">Welcome</h2>
+      <p>This page shows many common HTML elements in their semantic form. It intentionally contains no styling and no JavaScript.</p>
+    </article>
+
+    <section aria-labelledby="features">
+      <h2 id="features">Features & elements</h2>
+
+      <!-- Table -->
+      <section aria-labelledby="table-sample">
+        <h3 id="table-sample">Data Table</h3>
+        <table>
+          <caption>Monthly summary — top products</caption>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Units</th>
+              <th scope="col">Revenue</th>
+              <th scope="col">Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alpha</td>
+              <td>1,200</td>
+              <td>$12,000</td>
+              <td><meter min="0" max="100" value="65">65%</meter></td>
+            </tr>
+            <tr>
+              <td>Beta</td>
+              <td>930</td>
+              <td>$8,360</td>
+              <td><meter min="0" max="100" value="48">48%</meter></td>
+            </tr>
+            <tr>
+              <td>Gamma</td>
+              <td>540</td>
+              <td>$4,320</td>
+              <td><meter min="0" max="100" value="22">22%</meter></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Form -->
+      <section aria-labelledby="form-sample">
+        <h3 id="form-sample">Contact form</h3>
+        <form id="contact" action="#" method="post" autocomplete="on">
+          <fieldset>
+            <legend>Personal information</legend>
+
+            <p>
+              <label for="fullname">Full name</label><br>
+              <input id="fullname" name="fullname" type="text" required placeholder="Jane Doe">
+            </p>
+
+            <p>
+              <label for="email">Email</label><br>
+              <input id="email" name="email" type="email" required placeholder="you@example.com">
+            </p>
+
+            <p>
+              <label for="phone">Phone (optional)</label><br>
+              <input id="phone" name="phone" type="tel" placeholder="+880 1XXXXXXXXX">
+            </p>
+
+            <p>
+              <label for="reason">Reason for contact</label><br>
+              <select id="reason" name="reason">
+                <option value="general">General question</option>
+                <option value="bug">Report bug</option>
+                <option value="feature">Request feature</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="message">Message</label><br>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+            </p>
+
+            <p>
+              <span>Contact preference:</span><br>
+              <label><input type="radio" name="contactpref" value="email" checked> Email</label>
+              <label><input type="radio" name="contactpref" value="phone"> Phone</label>
+            </p>
+
+            <p>
+              <label><input type="checkbox" name="subscribe" checked> Subscribe to newsletter</label>
+            </p>
+
+            <p>
+              <button type="submit">Send</button>
+              <button type="reset">Reset</button>
+            </p>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Media -->
+      <section aria-labelledby="media" id="media">
+        <h3>Audio & Video</h3>
+
+        <p>Audio example (controls):</p>
+        <audio controls preload="metadata">
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+
+        <p>Video example (controls & captions):</p>
+        <video controls width="640" preload="metadata" playsinline>
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English captions" default>
+          Your browser does not support the video element.
+        </video>
+
+        <p>Embedded audio-only alternative using &lt;figure&gt; and &lt;figcaption&gt;:</p>
+        <figure>
+          <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <figcaption>Sample audio file (public demo).</figcaption>
+        </figure>
+      </section>
+
+      <!-- Figures / Images -->
+      <section aria-labelledby="images">
+        <h3 id="images">Images, picture & figure</h3>
+
+        <figure>
+          <picture>
+            <source media="(min-width:800px)" srcset="https://via.placeholder.com/800x300.png?text=Large+image">
+            <img src="https://via.placeholder.com/600x225.png?text=Responsive+image" alt="Responsive placeholder">
+          </picture>
+          <figcaption>Responsive image example using &lt;picture&gt;.</figcaption>
+        </figure>
+      </section>
+
+      <!-- Canvas & SVG -->
+      <section aria-labelledby="graphics">
+        <h3 id="graphics">Canvas & SVG</h3>
+
+        <p>Canvas element present (no drawing will appear without JavaScript):</p>
+        <canvas id="example-canvas" width="600" height="120">Your browser does not support the canvas element.</canvas>
+
+        <p>Inline SVG (scalable vector graphics):</p>
+        <svg viewBox="0 0 200 60" role="img" aria-labelledby="svgTitle">
+          <title id="svgTitle">Decorative wave</title>
+          <rect x="0" y="0" width="200" height="60" fill="none" stroke="black"></rect>
+          <path d="M0 30 Q50 0 100 30 T200 30" fill="none" stroke="black" stroke-width="2"></path>
+        </svg>
+      </section>
+
+      <!-- Semantic extras -->
+      <section aria-labelledby="extras">
+        <h3 id="extras">Other semantic elements</h3>
+
+        <details>
+          <summary>Show additional notes</summary>
+          <p>This block uses &lt;details&gt; and &lt;summary&gt; for collapsible content (works without JS).</p>
+        </details>
+
+        <p>Progress example:</p>
+        <progress value="40" max="100">40%</progress>
+
+        <p>Abbreviation example: <abbr title="Hypertext Markup Language">HTML</abbr></p>
+      </section>
+    </section>
+
+    <!-- Contact / Signup anchor -->
+    <section id="signup" aria-labelledby="signup-title">
+      <h2 id="signup-title">Sign up (demo)</h2>
+      <form action="#" method="post" aria-describedby="signup-desc">
+        <p id="signup-desc">Simple sign-up form (no styling).</p>
+        <p>
+          <label for="signup-email">Email</label><br>
+          <input id="signup-email" name="signup-email" type="email" required placeholder="you@example.com">
+        </p>
+        <p>
+          <label for="signup-name">Name</label><br>
+          <input id="signup-name" name="signup-name" type="text" placeholder="Your name">
+        </p>
+        <p>
+          <button type="submit">Subscribe</button>
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Sidebar / Complementary -->
+  <aside role="complementary" aria-labelledby="sidebar-title">
+    <h2 id="sidebar-title">Sidebar</h2>
+    <p>Additional links and a small embedded map (iframe).</p>
+
+    <p><a href="#features">Jump to features</a></p>
+
+    <h3>Embedded map (iframe)</h3>
+    <p>Note: many mapping providers require an API key for advanced embedding; this is a simple public embed example.</p>
+    <iframe title="Sample map" src="https://maps.google.com/maps?q=Dhaka&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="300" height="200" loading="lazy"></iframe>
+  </aside>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; <time datetime="2025-09-21">2025</time> HTML-only Demo. This page intentionally contains no CSS and no JavaScript.</p>
+    <nav aria-label="Footer links">
+      <ul>
+        <li><a href="#privacy" id="privacy">Privacy</a></li>
+        <li><a href="#terms" id="terms">Terms</a></li>
+        <li><a href="#help" id="help">Help</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
