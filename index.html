@@ -1,98 +1,216 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Demo Site with Cards</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="branding">
-      <a href="#home" class="logo">
-        <img src="data:image/svg+xml;utf8,
-        <svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'>
-        <rect rx='8' width='48' height='48' fill='%230b6cff'/>
-        <text x='50%' y='54%' font-size='22' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>W</text>
-        </svg>" alt="Site logo">
-      </a>
-      <h1>Demo Site</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complete HTML5 Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <div class="max-w-6xl mx-auto p-6 space-y-6">
+
+      <!-- Header -->
+      <header class="bg-white rounded-xl shadow p-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect rx='10' width='64' height='64' fill='%230b6cff'/><text x='50%' y='54%' font-size='30' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>W</text></svg>"
+              alt="logo"
+              class="w-10 h-10 rounded-lg"
+            />
+            <div>
+              <div class="font-bold">DemoSite</div>
+              <div class="text-sm text-gray-500">A full HTML5 example</div>
+            </div>
+          </div>
+
+          <nav aria-label="Main navigation" class="hidden md:block">
+            <ul class="flex gap-3 text-gray-600 text-sm">
+              <li><a href="#home" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md">Home</a></li>
+              <li><a href="#features" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md">Features</a></li>
+              <li><a href="#media" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md">Media</a></li>
+              <li><a href="#contact" class="hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md">Contact</a></li>
+            </ul>
+          </nav>
+
+          <a href="#signup" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm">Sign up</a>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <main class="grid md:grid-cols-[1fr_320px] gap-6">
+
+        <!-- Main content -->
+        <section id="home" class="bg-white rounded-xl shadow p-5 space-y-4">
+          <h1 class="text-2xl font-bold">Welcome to the HTML5 Demo</h1>
+          <p>This single page demonstrates a broad set of HTML elements and patterns built entirely with Tailwind CSS — including semantic layout, forms, tables, and media.</p>
+
+          <article id="features" class="bg-gray-50 rounded-lg p-5 space-y-6">
+            <h2 class="text-xl font-semibold">Features & Elements</h2>
+            <p class="text-sm text-gray-500">Below you will find samples of common HTML elements used in real websites.</p>
+
+            <!-- Table -->
+            <section>
+              <h3 class="font-semibold">Table (data)</h3>
+              <table class="w-full border-collapse text-sm">
+                <caption class="font-medium mb-2">Top 3 Products — monthly summary</caption>
+                <thead class="bg-gray-100">
+                  <tr>
+                    <th class="p-2 text-left">Product</th>
+                    <th class="p-2 text-left">Units</th>
+                    <th class="p-2 text-left">Revenue</th>
+                    <th class="p-2 text-left">Growth</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b"><td class="p-2">Alpha</td><td class="p-2">1,200</td><td class="p-2">$12,000</td><td class="p-2"><meter min="0" max="100" value="65">65%</meter></td></tr>
+                  <tr class="border-b"><td class="p-2">Beta</td><td class="p-2">930</td><td class="p-2">$8,360</td><td class="p-2"><meter min="0" max="100" value="48">48%</meter></td></tr>
+                  <tr><td class="p-2">Gamma</td><td class="p-2">540</td><td class="p-2">$4,320</td><td class="p-2"><meter min="0" max="100" value="22">22%</meter></td></tr>
+                </tbody>
+              </table>
+            </section>
+
+            <!-- Form -->
+            <section id="contact">
+              <h3 class="font-semibold">Form (interactive)</h3>
+              <form class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div>
+                    <label for="name" class="text-sm text-gray-600">Full name</label>
+                    <input id="name" name="name" type="text" required placeholder="Jane Doe"
+                      class="w-full border rounded-md p-2" />
+                  </div>
+                  <div>
+                    <label for="email" class="text-sm text-gray-600">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@example.com"
+                      class="w-full border rounded-md p-2" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="reason" class="text-sm text-gray-600">Reason</label>
+                  <select id="reason" name="reason" class="w-full border rounded-md p-2">
+                    <option>General question</option>
+                    <option>Report bug</option>
+                    <option>Request feature</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="message" class="text-sm text-gray-600">Message</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Tell us more..."
+                    class="w-full border rounded-md p-2"></textarea>
+                </div>
+
+                <fieldset class="border-t pt-2 text-sm text-gray-600">
+                  <legend class="text-xs text-gray-500">Preferences</legend>
+                  <label class="block"><input type="checkbox" name="subscribe" checked /> Subscribe to newsletter</label>
+                  <label class="block"><input type="radio" name="contact" value="email" checked /> Contact by email</label>
+                  <label class="block"><input type="radio" name="contact" value="phone" /> Contact by phone</label>
+                </fieldset>
+
+                <div class="flex gap-3">
+                  <button type="submit" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm">Send</button>
+                  <button type="reset" class="border px-3 py-2 rounded-md text-sm">Reset</button>
+                </div>
+              </form>
+            </section>
+
+            <!-- Media -->
+            <section id="media">
+              <h3 class="font-semibold">Media (audio & video)</h3>
+              <div class="grid gap-4">
+                <div>
+                  <label class="text-sm text-gray-500">Audio</label>
+                  <audio controls class="w-full">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+                <div>
+                  <label class="text-sm text-gray-500">Video</label>
+                  <video controls class="w-full rounded-md">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </section>
+
+            <!-- Images -->
+            <section>
+              <h3 class="font-semibold">Images & figures</h3>
+              <figure>
+                <img src="image/photo-1587163024102-a0c83aa2a392.jpg"
+                  alt="Example hero" class="w-full rounded-md" />
+                <figcaption class="text-xs text-gray-500 mt-1">Figure: a responsive example using &lt;picture&gt;.</figcaption>
+              </figure>
+            </section>
+
+            <!-- Canvas & SVG -->
+            <section>
+              <h3 class="font-semibold">Canvas & SVG</h3>
+              <canvas width="600" height="120" class="w-full rounded-md bg-gradient-to-b from-white to-blue-50"></canvas>
+              <svg viewBox="0 0 200 50" class="w-full h-12 mt-2">
+                <path d="M0 25 Q 50 0 100 25 T 200 25" fill="none" stroke="#0b6cff" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </section>
+
+            <!-- Other -->
+            <section>
+              <h3 class="font-semibold">Other semantics</h3>
+              <details class="text-sm text-gray-600">
+                <summary>Show extra notes</summary>
+                <p class="text-xs text-gray-500">This uses details and summary for collapsible content.</p>
+              </details>
+              <progress value="32" max="100" class="w-full mt-2">32%</progress>
+            </section>
+          </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="bg-white rounded-xl shadow p-5 space-y-4">
+          <h2 class="text-lg font-semibold">Sidebar</h2>
+          <p class="text-sm text-gray-500">Quick utilities and sample content</p>
+
+          <section class="space-y-4">
+            <div>
+              <h3 class="text-sm font-semibold">Quick facts</h3>
+              <ul class="list-disc pl-5 text-sm text-gray-700">
+                <li>Built with semantic HTML5</li>
+                <li>Accessible focus states</li>
+                <li>Minimal CSS, no frameworks</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-semibold">Mini form</h3>
+              <form class="space-y-2">
+                <label for="mini-email" class="text-sm text-gray-600">Email</label>
+                <input id="mini-email" type="email" placeholder="you@host.com" class="w-full border rounded-md p-2" />
+                <button type="submit" class="bg-blue-600 text-white px-3 py-2 rounded-md text-sm w-full">Subscribe</button>
+              </form>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-semibold">Embedded map</h3>
+              <div class="aspect-video rounded-md overflow-hidden">
+                <iframe title="sample map" src="https://maps.google.com/maps?q=Dhaka&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  class="w-full h-full border-0"></iframe>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white rounded-xl shadow p-4 text-center text-sm text-gray-500 space-y-2">
+        <p>&copy; <time datetime="2025-09-21">2025</time> DemoSite — all rights reserved.</p>
+        <div class="flex justify-center gap-3 text-xs">
+          <a href="#privacy" class="hover:text-blue-600">Privacy</a>
+          <a href="#terms" class="hover:text-blue-600">Terms</a>
+          <a href="#help" class="hover:text-blue-600">Help</a>
+        </div>
+      </footer>
     </div>
-
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#cards">Cards</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <a href="#signup" class="btn-cta">Sign Up</a>
-  </header>
-
-  <main>
-    <section id="features">
-      <h2>Features & elements</h2>
-      <p>This page shows many common HTML elements styled with CSS.</p>
-    </section>
-
-    <!-- Cards section -->
-    <section id="cards" class="cards-section">
-      <h2>Our Services</h2>
-      <div class="card-grid">
-        <div class="card">
-          <img src="https://picsum.photos/400/250?1" alt="Sample 1">
-          <h3>Web Development</h3>
-          <p>Build responsive, accessible and beautiful websites.</p>
-          <a href="#" class="btn">Learn more</a>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/400/250?2" alt="Sample 2">
-          <h3>Design</h3>
-          <p>Clean, modern UI/UX design for your applications.</p>
-          <a href="#" class="btn">Learn more</a>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/400/250?3" alt="Sample 3">
-          <h3>SEO</h3>
-          <p>Improve your ranking with our SEO strategies.</p>
-          <a href="#" class="btn">Learn more</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Example form -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form>
-        <p><label>Name<br><input type="text" required></label></p>
-        <p><label>Email<br><input type="email" required></label></p>
-        <p><label>Message<br><textarea rows="4"></textarea></label></p>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-
-    <section id="signup">
-      <h2>Sign up</h2>
-      <form>
-        <p><label>Email<br><input type="email" required></label></p>
-        <p><button type="submit">Subscribe</button></p>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>&copy; 2025 Demo Site. All rights reserved.</p>
-      <ul class="footer-nav">
-        <li><a href="#privacy">Privacy</a></li>
-        <li><a href="#terms">Terms</a></li>
-        <li><a href="#help">Help</a></li>
-      </ul>
-    </div>
-  </footer>
-</body>
+  </body>
 </html>
